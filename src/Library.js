@@ -22,9 +22,9 @@ class Library extends React.Component {
     render() {
         console.log(this.state)
         const { books } = this.props
-        return (
-            <h2>The library is {this.state.open ? 'open' : 'closed'}</h2> // Conditional Rendering using ternary or inline if statement 
+        return ( 
             <div>
+                <h2>The library is {this.state.open ? 'open' : 'closed'}</h2> { /*Conditional Rendering using ternary or inline if statement */}
                 {books.map(
                     (book, i) =>
                         <Book

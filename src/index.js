@@ -8,7 +8,36 @@ let skiData = {
     goal: 100
 }
 
-class SkyDayCounter extends React.Component {
+const getPercent = decimal => {
+    return decimal * 100 + '%'
+}
+const calculateGoalProgress = (total, goal) => {
+    return getPercent(total / goal)
+}
+
+const SkiDayCounterF = (props) => {
+    return (
+        <section>
+            <div>
+                <p>Total Days: {props.total}</p>
+            </div>
+            <div>
+                <p>Powder Days: {props.powder}</p>
+            </div>
+            <div>
+                <p>Backcountry Days: {props.backcountry}</p>
+            </div>
+            <div>
+                <p>Goal Days: {props.goal}</p>
+            </div>
+            <div>
+                <p>Goal Progress: {calculateGoalProgress(props.total, props.goal)}</p>
+            </div>
+        </section>
+    )
+}
+
+class SkiDayCounter extends React.Component {
     getPercent = decimal => {
         return decimal * 100 + '%'
     }
@@ -40,7 +69,7 @@ class SkyDayCounter extends React.Component {
 }
 
 ReactDOM.render(
-    <SkyDayCounter
+    <SkiDayCounterF
         total={skiData.total}
         powder={skiData.powder}
         backcountry={skiData.backcountry}

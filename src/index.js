@@ -7,13 +7,10 @@ var style= {
     fontFamily: 'Helvetica'
 }
 
-const title = React.createElement(
-    'h1',
-    { id: 'title', className: 'header', style: style },
-    'Hello World'
-)
-
 ReactDOM.render(
-    title,
+    <div style={style}>
+        <h1 id="heading-element" className="header">Hello World!</h1>
+        <p>React is fun!</p>
+    </div>,
     document.getElementById('root')
 )

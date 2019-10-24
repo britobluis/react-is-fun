@@ -10,14 +10,32 @@ const Book = ({title, author, pages}) => {
     )
 }
 
-const Library = () => {
-    return (
-        <div>
-            <Book title="The Sun Also Rises" author="Ernest Hemingway" pages={260}/>
-            <Book title="White Teeth" author="Zadie Smith" pages={480} />
-            <Book title="Cat's Cradle" author="Kurt Vonnegut" pages={304} />
-        </div>
-    )
+// To use local state Class component is needed
+class Library extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { // State is just an Object, that has as many keys as one sets up
+            open: true
+        }
+    }
+
+    render() {
+        console.log(this.state)
+        const { books } = this.props
+        return (
+            <h2>The library is {this.state.open ? 'open' : 'closed'}</h2> // Conditional Rendering using ternary or inline if statement 
+            <div>
+                {books.map(
+                    (book, i) =>
+                        <Book
+                            key={i}
+                            title={book.title}
+                            author={book.author}
+                            pages={book.pages} />
+                )}
+            </div>
+        )
+    }
 }
 
 export default Library

@@ -75,4 +75,12 @@ class SkiDayCounter extends React.Component {
     }
 }
 
+// To render
+// <SkiDayCounter
+    //     total={skiData.total}
+    //     powder={skiData.powder}
+    //     backcountry={skiData.backcountry}
+    //     goal={skiData.goal}
+    // />
+
 export default SkiDayCounter

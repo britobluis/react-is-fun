@@ -1,24 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SkiDayCounter from './SkiDayCounter';
 import Library from './Library';
 
-// Using SkiDayCounter
-let skiData = {
-    total: 50,
-    powder: 20,
-    backcountry: 10,
-    goal: 100
-}
-// To render
-// <SkiDayCounter
-    //     total={skiData.total}
-    //     powder={skiData.powder}
-    //     backcountry={skiData.backcountry}
-    //     goal={skiData.goal}
-    // />
+// Books
+let bookList = [
+    { "title": "Hunger", "author": "Roxane Gay", "pages": 320 },
+    { "title": "The Sun Also Rises", "author": "Ernest Hemingway", "pages": 260 },
+    { "title": "White Teeth", "author": "Zadie Smith", "pages": 480 },
+    { "title": "Cat's Cradle", "author": "Kurt Vonnegut", "pages": 304 }
+]
 
 ReactDOM.render(
-    <Library />,
+    <Library books={bookList}/>,
     document.getElementById('root')
 )

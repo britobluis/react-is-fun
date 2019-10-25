@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Library from './Library';
+import FavoriteColorForm from './FavoriteColorForm';
 
 // Books
 let bookList = [
@@ -11,6 +12,8 @@ let bookList = [
 ]
 
 ReactDOM.render(
-    <Library books={bookList}/>,
+    <Library books={bookList}/>
+    // <FavoriteColorForm />
+    ,
     document.getElementById('root')
 )

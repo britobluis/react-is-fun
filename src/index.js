@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import Library from './Library';
 import FavoriteColorForm from './FavoriteColorForm';
 
@@ -10,6 +11,10 @@ let bookList = [
     { "title": "White Teeth", "author": "Zadie Smith", "pages": 480 },
     { "title": "Cat's Cradle", "author": "Kurt Vonnegut", "pages": 304 }
 ]
+
+Library.PropTypes = {
+    books: PropTypes.array
+}
 
 ReactDOM.render(
     <Library books={bookList}/>

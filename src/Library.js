@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Book = ({title, author, pages, freeBookmark}) => {
+const Book = ({title="No Title Provided", author="No Author", pages=0, freeBookmark}) => {
     return (
         <section>
             <h2>{title}</h2>
@@ -61,7 +61,7 @@ class Library extends React.Component {
                 {this.state.loading
                     ? "loading..."
                     : <div>
-                        {this.state.data.map((product, i) => {
+                        {this.state.data.map((product, i) => { // Array method .map() iterates an array
                             return (
                                 <div key={i}>
                                     <h3>Library Product of the Week!</h3>

@@ -1,25 +1,8 @@
 import React from 'react';
-
-const Book = ({title="No Title Provided", author="No Author", pages=0, freeBookmark}) => {
-    return (
-        <section>
-            <h2>{title}</h2>
-            <p>by: {author}</p>
-            <p>Pages: {pages} pages</p>
-            <p>Free Bookmark Today: {freeBookmark ? 'yes!' : 'no!'}</p>
-        </section>
-    )
-}
-
-const Hiring = () => 
-    <div>
-        <p>The library is hiring. Go to www.library.com/jobs for more.</p>
-    </div>
-
-const NotHiring = () =>
-    <div>
-        <p>The library is not hiring. Check back later for more info.</p>
-    </div>
+import PropTypes from 'prop-types';
+import Book from './Book';
+import Hiring from './Hiring';
+import NotHiring from './NotHiring';
 
 // To use local state Class component is needed
 class Library extends React.Component {
@@ -86,6 +69,13 @@ class Library extends React.Component {
             </div>
         )
     }
+}
+
+Book.propTypes = {
+    title: PropTypes.string,
+    author: PropTypes.string,
+    pages: PropTypes.number,
+    freeBookmark: PropTypes.bool
 }
 
 export default Library
